@@ -1,4 +1,3 @@
-from io import FileIO, BufferedWriter
 import os
 
 from django.conf import settings
@@ -17,7 +16,7 @@ class LocalUploadBackend(AbstractUploadBackend):
             os.makedirs(os.path.realpath(os.path.dirname(self._path)))
         except:
             pass
-        self._dest = BufferedWriter(FileIO(self._path, "w"))
+        self._dest = open(self._path, "w")
 
     def upload_chunk(self, chunk, *args, **kwargs):
         self._dest.write(chunk)
