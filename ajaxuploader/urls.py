@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
 
-from .views import handle_s3, success_redirect_endpoint
+from views import handle_s3, success_redirect_endpoint
 
 urlpatterns = patterns(
     '',
